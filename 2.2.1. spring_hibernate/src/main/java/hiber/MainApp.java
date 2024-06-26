@@ -31,6 +31,9 @@ public class MainApp {
       userService.add(user3);
       userService.add(user4);
 
+      //В сервис добавить метод который hql-запросом будет доставать юзера по модели и серии машины
+
+
       List<User> users = userService.listUsers();
       for (User user : users) {
          System.out.println("Id = "+user.getId());
@@ -39,6 +42,9 @@ public class MainApp {
          System.out.println("Email = "+user.getEmail());
          System.out.println(user.getCar());
       }
+//      System.out.println(userService.getCarBySeriesAndModel(2106, "VAZ"));
+      System.out.println(userService.getUserByCarParams(2106, "VAZ"));
+
       context.close();
    }
 }
